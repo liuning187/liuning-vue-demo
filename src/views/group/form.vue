@@ -88,8 +88,8 @@ export default {
       show: false,
       formLabelWidth: '100px',
       options: [{
-        orgId: 'admin',
-        orgName: 'admin',
+        orgId: '1',
+        orgName: 'qwe',
         children: []
       }],
       optionId: null,
@@ -113,6 +113,7 @@ export default {
     async createList (val) {
       this.optionId = val[val.length - 1]
       this.editData.orgId = this.optionId
+      this.editData.parentId = this.optionId
       let resp = await sysApi.getorg(val[val.length - 1])
       if (resp.length > 0) {
         if (val.length === 1) {
@@ -145,7 +146,7 @@ export default {
           if (this.dialogStatus) {
             resp = await sysApi.update(this.editData)
           } else {
-            debugger
+            this.editData.orgId = null
             resp = await sysApi.create(this.editData)
           }
           if (resp.state === '0') {

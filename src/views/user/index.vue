@@ -2,8 +2,9 @@
   <div class="titlecolor">
     <!--工具条-->
     <section>
-      <!--使用 el-collapse-transition 组件实现折叠展开效果-->
+      <!--布局-->
       <el-col :span="24" class="toolbar" style="padding-bottom: 0px;">
+        <!--表单-->
         <el-form :inline="true" :model="filters">
           <el-form-item>
             <el-input v-model="filters.userName" placeholder="用户名称"></el-input>
@@ -31,6 +32,7 @@
         </el-table>
       </div>
       <div>
+        <!--分页-->
         <el-pagination
           layout="prev, pager, next" :total="total" style="float:right;" @current-change="pageChange">
         </el-pagination>
@@ -44,7 +46,6 @@
 <script>
 import UserForm from './form.vue'
 import userApi from '@/api/user'
-
 export default {
   components: {UserForm},
   name: 'user_index',

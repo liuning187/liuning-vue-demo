@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!--弹框页面关闭弹框清空数据-->
     <el-dialog :title="title[dialogStatus]" width="600px" :visible.sync="show">
       <div>
         <el-form ref="forms" label-width="100px" :model="editData" :rules="rule">
@@ -10,6 +11,7 @@
             <el-input v-model="editData.orgId"></el-input>
           </el-form-item>
           <el-form-item label="选择机构" prop="orgId">
+            <!--下拉选弹框--><!--change-on-select  值改变事件-->
             <el-cascader
               :props="treeRoles"
               :options="options"

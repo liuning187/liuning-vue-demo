@@ -36,6 +36,7 @@
       <el-card class="box-card">
         <user-index :orgId="checkId"></user-index>
       </el-card>
+      <!---->
       <group-form :visible.sync="dialogVisible" :editData="editData" :dialogStatus="dialogStatus" :title="title"
                   @success="loadData"></group-form>
     </el-row>
